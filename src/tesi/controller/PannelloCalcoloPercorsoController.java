@@ -182,6 +182,7 @@ public class PannelloCalcoloPercorsoController {
 				}
 				
 				engine.load(s);
+				this.webView.setDisable(true);
 				System.out.println(s);
 			}
 			else
