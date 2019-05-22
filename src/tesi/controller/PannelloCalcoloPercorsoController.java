@@ -127,7 +127,15 @@ public class PannelloCalcoloPercorsoController {
     	 WebEngine engine=this.webView.getEngine();
 
 		String partenza=this.boxCittaPartenza.getValue();
+		if(partenza==null) {
+			txtResult.appendText("Devi inserire una punto di partenza\n");
+			return;
+		}
 		String arrivo=this.boxCittaArrivo.getValue();
+		if(arrivo==null) {
+			txtResult.appendText("Devi inserire una punto di arrivo\n");
+			return;
+		}
 		
 		txtResult.appendText("Distanza tra i due punti: "+this.model.distanzaPunti(new LatLng(Float.parseFloat(this.txtLatPartenza.getText()), Float.parseFloat(this.txtLongPartenza.getText())),new LatLng(Float.parseFloat(this.txtLatArrivo.getText()), Float.parseFloat(this.txtLongArrivo.getText())))+" km\n");
 		
