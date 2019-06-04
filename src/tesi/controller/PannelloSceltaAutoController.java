@@ -143,7 +143,7 @@ public class PannelloSceltaAutoController {
    
 
     @FXML
-    void checkSelectedMarca(MouseEvent event) {
+    void checkSelectedMarca(ActionEvent event) {
 		//this.tendinaMarca.getItems().addAll(this.model.getMarche());
 
     	if(!this.tendinaMarca.getSelectionModel().isEmpty()) {
@@ -153,7 +153,7 @@ public class PannelloSceltaAutoController {
     }
 
     @FXML
-    void checkSelectedModello(MouseEvent event) {
+    void checkSelectedModello(ActionEvent event) {
     	if(!this.tendinaModello.getSelectionModel().isEmpty()) {
     	this.tendinaMarca.setDisable(true);
     	this.tendinaNumPosti.setDisable(true);

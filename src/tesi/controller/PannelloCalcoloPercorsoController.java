@@ -216,7 +216,7 @@ public class PannelloCalcoloPercorsoController {
     }
 
     @FXML
-    void generaCoordinateArrivo(MouseEvent event) {
+    void generaCoordinateArrivo(ActionEvent event) {
     	if(!this.boxCittaArrivo.getSelectionModel().isEmpty()) {
     	String arrivo=this.boxCittaArrivo.getValue();
     	String latArrivo=this.model.getLatitudine(arrivo);
@@ -232,7 +232,7 @@ public class PannelloCalcoloPercorsoController {
     }
 
     @FXML
-    void generaCoordinatePartenza(MouseEvent event) {
+    void generaCoordinatePartenza(ActionEvent event) {
     	if(!this.boxCittaPartenza.getSelectionModel().isEmpty()) {
     	String partenza=this.boxCittaPartenza.getValue();
     	this.txtLatPartenza.setText(this.model.getLatitudine(partenza));

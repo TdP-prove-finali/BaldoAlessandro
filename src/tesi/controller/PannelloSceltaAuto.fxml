@@ -68,7 +68,7 @@
                                           <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <ComboBox fx:id="tendinaMarca" onMouseExited="#checkSelectedMarca" prefHeight="27.0" prefWidth="120.0">
+                                    <ComboBox fx:id="tendinaMarca" onAction="#checkSelectedMarca" prefHeight="27.0" prefWidth="120.0">
                                        <VBox.margin>
                                           <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                                        </VBox.margin>
@@ -82,7 +82,7 @@
                                           <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <ComboBox fx:id="tendinaModello" onMouseExited="#checkSelectedModello" prefHeight="27.0" prefWidth="124.0">
+                                    <ComboBox fx:id="tendinaModello" onAction="#checkSelectedModello" prefHeight="27.0" prefWidth="124.0">
                                        <VBox.margin>
                                           <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                                        </VBox.margin>
