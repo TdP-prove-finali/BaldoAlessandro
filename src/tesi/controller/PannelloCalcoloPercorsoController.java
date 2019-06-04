@@ -149,14 +149,16 @@ public class PannelloCalcoloPercorsoController {
 		
 		this.model.verticiRaggiungibili(this.model.getCityByName(partenza));
 		List<Vertex> percorso=this.model.spanningTreeFinoA(this.model.getCityByName(arrivo));
-		if(percorso!=null) {
+		int number=0;
+		for(Vertex v:percorso)
+			if(v instanceof StazioniRicarica)
+				number++;
+		if(number!=0) {
 			txtResult.appendText(String.format("Possibili stazioni di ricarica presenti nel percorso tra %s e %s\n",partenza,arrivo));
 			for(Vertex v:percorso) {
 				if(v instanceof StazioniRicarica)
 					txtResult.appendText("•"+((StazioniRicarica)v).toString());}
 		}
-		else
-			txtResult.appendText("Non è stato possibile trovare alcuna Stazione di Ricarica presente nel percorso");
 		
 		
 		
