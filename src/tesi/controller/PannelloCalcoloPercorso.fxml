@@ -178,7 +178,7 @@
                                                       <Insets bottom="5.0" left="5.0" right="10.0" />
                                                    </HBox.margin>
                                                 </RadioButton>
-                                                <Button fx:id="btnCalcolaPercorso" mnemonicParsing="false" onAction="#doCalcolaPercorso" text="Calcola Percorso">
+                                                <Button fx:id="btnCalcolaPercorso" disable="true" mnemonicParsing="false" onAction="#doCalcolaPercorso" text="Calcola Percorso">
                                                    <HBox.margin>
                                                       <Insets left="25.0" right="20.0" />
                                                    </HBox.margin>

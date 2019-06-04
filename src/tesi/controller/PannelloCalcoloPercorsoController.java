@@ -205,7 +205,11 @@ public class PannelloCalcoloPercorsoController {
     	this.txtLatPartenza.clear();
     	this.txtLongArrivo.clear();
     	this.txtLongPartenza.clear();
+    	WebEngine webEngine=webView.getEngine();
     	this.checkColonnineFast.selectedProperty().set(false);
+    	webEngine.load("https://www.google.com/maps/place/California,+Stati+Uniti/@37.1843034,-123.7975979");
+		webView.setZoom(0.6);
+		this.btnCalcolaPercorso.setDisable(true);
     }
 
     @FXML
@@ -216,6 +220,9 @@ public class PannelloCalcoloPercorsoController {
     	this.txtLatArrivo.setText(latArrivo);
     	String longArrivo=this.model.getLongitudine(arrivo);
     	this.txtLongArrivo.setText(longArrivo);
+    	
+    	if(!this.txtLatPartenza.getText().equals("") && !this.txtLongPartenza.getText().equals(""))
+    		this.btnCalcolaPercorso.setDisable(false);
     	
     	}
     	
@@ -228,6 +235,8 @@ public class PannelloCalcoloPercorsoController {
     	this.txtLatPartenza.setText(this.model.getLatitudine(partenza));
     	this.txtLongPartenza.setText(this.model.getLongitudine(partenza));
     	
+    	if(!this.txtLatArrivo.getText().equals("") && !this.txtLongArrivo.getText().equals(""))
+    		this.btnCalcolaPercorso.setDisable(false);
     	
     	}
     	
