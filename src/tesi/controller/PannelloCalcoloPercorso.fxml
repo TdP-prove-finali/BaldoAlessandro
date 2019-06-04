@@ -170,31 +170,22 @@
                                           </Text>
                                           <HBox prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <RadioButton fx:id="checkPercorsoVeloce" mnemonicParsing="false" text="Più Veloce" textFill="WHITE">
-                                                   <HBox.margin>
-                                                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                                   </HBox.margin>
-                                                </RadioButton>
-                                                <Button fx:id="btnCalcolaPercorso" mnemonicParsing="false" onAction="#doCalcolaPercorso" text="Calcola Percorso">
-                                                   <HBox.margin>
-                                                      <Insets left="105.0" right="50.0" />
-                                                   </HBox.margin>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
-                                             <children>
                                                 <RadioButton fx:id="checkColonnineFast" mnemonicParsing="false" prefHeight="28.0" prefWidth="176.0" text="Con Colonnine DC Fast" textFill="WHITE">
                                                    <padding>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </padding>
                                                    <HBox.margin>
-                                                      <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                      <Insets bottom="5.0" left="5.0" right="10.0" />
                                                    </HBox.margin>
                                                 </RadioButton>
+                                                <Button fx:id="btnCalcolaPercorso" mnemonicParsing="false" onAction="#doCalcolaPercorso" text="Calcola Percorso">
+                                                   <HBox.margin>
+                                                      <Insets left="25.0" right="20.0" />
+                                                   </HBox.margin>
+                                                </Button>
                                                 <Button fx:id="btnResetPercorso" mnemonicParsing="false" onAction="#doResetPercorso" text="Reset">
                                                    <HBox.margin>
-                                                      <Insets bottom="5.0" left="23.0" top="5.0" />
+                                                      <Insets left="9.0" />
                                                    </HBox.margin>
                                                 </Button>
                                              </children>
@@ -213,7 +204,7 @@
                               </HBox>
                            </children>
                         </VBox>
-                        <VBox prefHeight="545.0" prefWidth="592.0" style="-fx-background-color: mediumturquoise;">
+                        <VBox prefHeight="545.0" prefWidth="592.0">
                            <children>
                               <WebView fx:id="webView" prefHeight="553.0" prefWidth="592.0">
                                  <VBox.margin>

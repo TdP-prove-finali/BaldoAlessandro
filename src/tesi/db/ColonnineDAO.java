@@ -22,7 +22,7 @@ public class ColonnineDAO {
 	//AutoDAO
 	public List<String> getListMarche() {
 
-		String sql = "SELECT DISTINCT Marca FROM AutoElettriche";
+		String sql = "SELECT DISTINCT Marca FROM AutoElettriche ORDER BY Marca";
 		List<String> marche = new ArrayList<>();
 
 		try {
@@ -46,7 +46,7 @@ public class ColonnineDAO {
 	
 	public List<String> getListModelli() {
 
-		String sql = "SELECT DISTINCT Modello FROM AutoElettriche";
+		String sql = "SELECT DISTINCT Modello FROM AutoElettriche ORDER BY Modello";
 		List<String> modelli = new ArrayList<>();
 
 		try {
@@ -165,7 +165,7 @@ public class ColonnineDAO {
 	
 	public List<AutoElettriche> getListAuto() {
 
-		String sql = "SELECT * FROM AutoElettriche";
+		String sql = "SELECT * FROM AutoElettriche ORDER BY Marca";
 		List<AutoElettriche> auto = new ArrayList<>();
 
 		try {
@@ -243,7 +243,6 @@ public class ColonnineDAO {
 				
 				
 			}
-
 			conn.close();
 
 		} catch (SQLException e) {

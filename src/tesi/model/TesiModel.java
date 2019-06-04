@@ -183,7 +183,7 @@ public class TesiModel {
 			if(s instanceof StazioniRicarica)
 			for(Vertex t: this.reteStazioni.vertexSet()) {
 				if(t instanceof StazioniRicarica)
-				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) /*&& !(((StazioniRicarica)s).getCity().equals(((StazioniRicarica)t).getCity()))*/ && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
+				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
 					//System.out.println(s.toString()+","+t.toString());
 					ArcoStazione a=new ArcoStazione(s,t,this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords()));
 					Graphs.addEdge(this.reteStazioni, a.getS1(), a.getS2(), a.getDistance());
@@ -243,7 +243,7 @@ public class TesiModel {
 			if(s instanceof StazioniRicarica)
 			for(Vertex t: this.reteStazioni.vertexSet()) {
 				if(t instanceof StazioniRicarica)
-				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) /*&& !(((StazioniRicarica)s).getCity().equals(((StazioniRicarica)t).getCity()))*/ && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
+				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
 					//System.out.println(s.toString()+","+t.toString());
 					ArcoStazione a=new ArcoStazione(s,t,this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords()));
 					Graphs.addEdge(this.reteStazioni, a.getS1(), a.getS2(), a.getDistance());
@@ -306,7 +306,7 @@ public class TesiModel {
 			if(s instanceof StazioniRicarica)
 			for(Vertex t: this.reteStazioni.vertexSet()) {
 				if(t instanceof StazioniRicarica)
-				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) /*&& !(((StazioniRicarica)s).getCity().equals(((StazioniRicarica)t).getCity()))*/ && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
+				if(!((StazioniRicarica)s).equals((StazioniRicarica)t) && this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords())<autonomia ) {
 					//System.out.println(s.toString()+","+t.toString());
 					ArcoStazione a=new ArcoStazione(s,t,this.distanzaPunti(((StazioniRicarica)s).getCoords(), ((StazioniRicarica)t).getCoords()));
 					Graphs.addEdge(this.reteStazioni, a.getS1(), a.getS2(), a.getDistance());

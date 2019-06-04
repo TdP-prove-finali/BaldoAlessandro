@@ -73,9 +73,6 @@ public class PannelloCalcoloPercorsoController {
     private TextField txtLongArrivo;
     
     @FXML
-    private RadioButton checkPercorsoVeloce;
-
-    @FXML
     private RadioButton checkColonnineFast;
 
     @FXML
@@ -123,17 +120,17 @@ public class PannelloCalcoloPercorsoController {
 
     @FXML
     void doCalcolaPercorso(ActionEvent event) {
-    	
+    	txtResult.clear();
     	 WebEngine engine=this.webView.getEngine();
 
 		String partenza=this.boxCittaPartenza.getValue();
 		if(partenza==null) {
-			txtResult.appendText("Devi inserire una punto di partenza\n");
+			txtResult.appendText("Devi inserire un punto di partenza\n");
 			return;
 		}
 		String arrivo=this.boxCittaArrivo.getValue();
 		if(arrivo==null) {
-			txtResult.appendText("Devi inserire una punto di arrivo\n");
+			txtResult.appendText("Devi inserire un punto di arrivo\n");
 			return;
 		}
 		
@@ -163,7 +160,6 @@ public class PannelloCalcoloPercorsoController {
 		
 		
 		
-		if(this.checkPercorsoVeloce.isSelected()) {
 			List<Vertex> percorsoOttimo=this.model.calcolaCamminoMinimo(partenza, arrivo);
 			if(percorsoOttimo!=null) {
 				txtResult.appendText("Il percorso più veloce per raggiungere "+arrivo+" da "+partenza+" è:\n");
@@ -191,13 +187,13 @@ public class PannelloCalcoloPercorsoController {
 				
 				engine.load(s);
 				this.webView.setDisable(true);
-				System.out.println(s);
+				//System.out.println(s);
 			}
 			else
 				txtResult.appendText("Per i punti indicati non è stato possibile calcolare alcun percorso");
 			
 			
-		}
+		
     }
 
     @FXML
@@ -210,7 +206,6 @@ public class PannelloCalcoloPercorsoController {
     	this.txtLongArrivo.clear();
     	this.txtLongPartenza.clear();
     	this.checkColonnineFast.selectedProperty().set(false);
-    	this.checkPercorsoVeloce.selectedProperty().set(false);
     }
 
     @FXML
@@ -249,7 +244,6 @@ public class PannelloCalcoloPercorsoController {
         assert boxCittaArrivo != null : "fx:id=\"boxCittaArrivo\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
         assert txtLatArrivo != null : "fx:id=\"txtLatArrivo\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
         assert txtLongArrivo != null : "fx:id=\"txtLongArrivo\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
-        assert checkPercorsoVeloce != null : "fx:id=\"checkPercorsoVeloce\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
         assert checkColonnineFast != null : "fx:id=\"checkColonnineFast\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
         assert btnCalcolaPercorso != null : "fx:id=\"btnCalcolaPercorso\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
         assert btnResetPercorso != null : "fx:id=\"btnResetPercorso\" was not injected: check your FXML file 'PannelloCalcoloPercorso.fxml'.";
@@ -273,32 +267,38 @@ public class PannelloCalcoloPercorsoController {
 	
 
 	public void setModelloAuto(List<AutoElettriche> choice) {
-		int autonomiaMax=0;
+		double rapporto=0.0;
+		int autonomia=0;
 		String modello="";
 		this.choice=choice;
+		System.out.println(this.choice);
 		if(choice.size()!=0) {
-    		for(AutoElettriche a:choice) 
-    			if(a.getAutonomia()>autonomiaMax) {
-    				autonomiaMax=a.getAutonomia();
+    		for(AutoElettriche a:choice) {
+    			//System.out.println((double)(a.getAutonomia())/a.getPrezzoVendita());
+    			if(((double)a.getAutonomia()/a.getPrezzoVendita())>rapporto) {
+    				rapporto=((double)a.getAutonomia())/a.getPrezzoVendita();
+    				System.out.println(rapporto);
+    				autonomia=a.getAutonomia();
     				modello=a.getModello();
     				}
+    		}
 		}
 		
     			
-		this.txtAutonomiaScelta.setText(""+autonomiaMax);
+		this.txtAutonomiaScelta.setText(""+autonomia);
 		this.txtModelloScelto.setText(modello);
 		if(!this.model.getAutoByModello(modello).isRicaricaRapida())
 			this.checkColonnineFast.setDisable(true);
 	}
 	
 	public void setModelloAuto() {
-		int autonomiaMax=0;
+		int autonomia=0;
 		String modello="";
 		Random rand=new Random();
 		int i=rand.nextInt(model.getAllAuto().size());
-		autonomiaMax=model.getAllAuto().get(i).getAutonomia();
+		autonomia=model.getAllAuto().get(i).getAutonomia();
 		modello=model.getAllAuto().get(i).getModello();
-		this.txtAutonomiaScelta.setText(""+autonomiaMax);
+		this.txtAutonomiaScelta.setText(""+autonomia);
 		this.txtModelloScelto.setText(modello);
 		if(!this.model.getAutoByModello(modello).isRicaricaRapida())
 			this.checkColonnineFast.setDisable(true);
