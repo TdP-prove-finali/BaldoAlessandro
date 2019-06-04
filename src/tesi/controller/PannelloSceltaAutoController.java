@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -57,16 +58,16 @@ public class PannelloSceltaAutoController {
     private CheckBox checkNoleggio;
 
     @FXML
-    private ChoiceBox<String> tendinaMarca;
+    private ComboBox<String> tendinaMarca;
 
     @FXML
-    private ChoiceBox<String> tendinaModello;
+    private ComboBox<String> tendinaModello;
 
     @FXML
-    private ChoiceBox<String> tendinaSegmento;
+    private ComboBox<String> tendinaSegmento;
 
     @FXML
-    private ChoiceBox<Integer> tendinaNumPosti;
+    private ComboBox<Integer> tendinaNumPosti;
 
     @FXML
     private CheckBox checkTrazione;
@@ -488,6 +489,8 @@ public class PannelloSceltaAutoController {
 		this.tendinaMarca.getItems().addAll(this.model.getMarche());
 		this.tendinaModello.getItems().addAll(this.model.getModelli());
 		this.tendinaNumPosti.getItems().addAll(this.model.getNumPosti());
+		
+
 		this.tendinaSegmento.getItems().addAll(this.model.getSegmenti());
 		this.auto=this.model.getAllAuto();
 		this.tableResult.getItems().add(null);

@@ -69,7 +69,7 @@ public class ColonnineDAO {
 	}
 
 	public List<Integer> getListNumPosti() {
-		String sql = "SELECT DISTINCT NumeroPosti FROM AutoElettriche";
+		String sql = "SELECT DISTINCT NumeroPosti FROM AutoElettriche ORDER BY NumeroPosti";
 		List<Integer> numposti = new ArrayList<>();
 
 		try {

@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
@@ -68,24 +68,24 @@
                               </HBox>
                               <HBox prefHeight="68.0" prefWidth="200.0">
                                  <children>
-                                    <VBox prefHeight="66.0" prefWidth="485.0">
+                                    <VBox prefHeight="68.0" prefWidth="557.0">
                                        <children>
                                           <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli la Città di Partenza" wrappingWidth="283.11083984375">
                                              <VBox.margin>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </VBox.margin></Text>
-                                          <HBox prefHeight="51.0" prefWidth="421.0">
+                                          <HBox prefHeight="41.0" prefWidth="503.0">
                                              <children>
                                                 <Label text="Partenza" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="5.0" right="2.0" top="10.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ChoiceBox fx:id="boxCittaPartenza" onMouseExited="#generaCoordinatePartenza" prefHeight="27.0" prefWidth="110.0">
+                                                <ComboBox fx:id="boxCittaPartenza" onMouseExited="#generaCoordinatePartenza" prefHeight="27.0" prefWidth="151.0">
                                                    <HBox.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </HBox.margin>
-                                                </ChoiceBox>
+                                                </ComboBox>
                                                 <Label text="Lat" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
@@ -114,7 +114,7 @@
                               </HBox>
                               <HBox prefHeight="68.0" prefWidth="200.0">
                                  <children>
-                                    <VBox prefHeight="66.0" prefWidth="486.0">
+                                    <VBox prefHeight="68.0" prefWidth="560.0">
                                        <children>
                                           <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli la Città di Arrivo" wrappingWidth="264.40087890625">
                                              <VBox.margin>
@@ -128,11 +128,11 @@
                                                       <Insets bottom="10.0" left="5.0" right="2.0" top="10.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ChoiceBox fx:id="boxCittaArrivo" onMouseExited="#generaCoordinateArrivo" prefHeight="27.0" prefWidth="110.0">
+                                                <ComboBox fx:id="boxCittaArrivo" onMouseExited="#generaCoordinateArrivo" prefHeight="27.0" prefWidth="151.0">
                                                    <HBox.margin>
                                                       <Insets bottom="5.0" left="22.0" right="5.0" top="5.0" />
                                                    </HBox.margin>
-                                                </ChoiceBox>
+                                                </ComboBox>
                                                 <Label text="Lat" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />

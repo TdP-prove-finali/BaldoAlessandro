@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -55,7 +56,7 @@ public class PannelloCalcoloPercorsoController {
     private TextField txtAutonomiaScelta;
 
     @FXML
-    private ChoiceBox<String> boxCittaPartenza;
+    private ComboBox<String> boxCittaPartenza;
 
     @FXML
     private TextField txtLatPartenza;
@@ -64,7 +65,7 @@ public class PannelloCalcoloPercorsoController {
     private TextField txtLongPartenza;
 
     @FXML
-    private ChoiceBox<String> boxCittaArrivo;
+    private ComboBox<String> boxCittaArrivo;
 
     @FXML
     private TextField txtLatArrivo;
